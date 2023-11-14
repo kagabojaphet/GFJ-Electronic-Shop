@@ -1,0 +1,103 @@
+nav{
+    padding: 0 5rem;
+    background: $ternary-color;
+    border-bottom: 1px solid $primary-color;
+    width: 100%;
+    height: 90px;
+    position: sticky;
+    z-index: 999;
+    right: 0;
+    top: 0;
+    @include flexs(flex,space-between,center,0rem);
+    .logo{
+        width: 100px;
+        height: 100%;
+        border-radius: 50px;
+        background: $primary-color;
+        img{
+            width: 100%;
+            height: 100%;
+            font-weight: $fontsize-lg;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit:cover;
+            transition: .3s;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .nav-links{
+        @include flexs(flex,space-between,center,0rem);
+        li{
+            list-style-type: none;
+            a{
+                text-decoration: none;
+                font-size: $fontsize-x-md;
+                color: $primary-color;
+                font-weight: $fontweight-x-lg;
+                padding: 2rem;
+                transition: .5s;
+                &:hover{
+                    background: $secondry-color;
+                    border-radius: .4rem;
+                    color: $ternary-color;
+                }
+            }
+        }
+    }
+}
+.home-container{
+    background-image: url("https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 84.2vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0rem 5rem;
+    .home-text{
+        background:$ternary-color;
+        width: 400px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $primary-color;
+        border-radius: .4rem;
+        cursor: pointer;                                                                                ;
+        h1{
+            font-size: $fontsize-lg;
+        }
+        p{
+            padding: 1rem 0;
+            font-size: $fontsize-sm;
+            font-weight: $fontweight-x-lg;
+        }
+        a{
+            padding: 1.7rem 3rem;
+            background: $primary-color;
+            font-weight: $fontweight-lg;
+            font-size: $fontsize-x-sm;
+            border-radius: .4rem;
+            text-decoration: none;
+            color: $ternary-color;
+            transition: .5s;
+            &:hover{
+                background-color: $secondry-color;
+            }
+
+        }
+    }
+}
+.about-container{
+    width: 100%;
+    height: 100vh;
+    background: $ternary-color;
+}
