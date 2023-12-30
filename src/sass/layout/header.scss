@@ -1,9 +1,9 @@
 nav{
     padding: 0 5rem;
-    background: $ternary-color;
+    background-color: white;
     border-bottom: 1px solid $primary-color;
     width: 100%;
-    height: 90px;
+    height: 100px;
     position: sticky;
     z-index: 999;
     right: 0;
@@ -29,7 +29,7 @@ nav{
         }
     }
     .nav-links{
-        @include flexs(flex,space-between,center,0rem);
+        @include flexs(flex,space-between,center,3rem);
         li{
             list-style-type: none;
             a{
@@ -39,17 +39,21 @@ nav{
                 font-weight: $fontweight-x-lg;
                 padding: 2rem;
                 transition: .5s;
+                font-size: 1.7rem;
+                font-weight: 700;
                 &:hover{
                     background: $secondry-color;
                     border-radius: .4rem;
                     color: $ternary-color;
+                    font-weight: 800;
                 }
             }
         }
     }
 }
 .home-container{
-    background-image: url("https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?");
+    background-image: linear-gradient(to right bottom,rgba(30, 143, 255, 0),rgba(30, 143, 255, 0),rgba(204, 50, 140, 0),rgba(204, 50, 140, 0.315)),
+    url("https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?");
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,36 +66,36 @@ nav{
     align-items: center;
     padding: 0rem 5rem;
     .home-text{
-        background:$ternary-color;
+        position: absolute;
         width: 400px;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid $primary-color;
-        border-radius: .4rem;
-        cursor: pointer;                                                                                ;
+        padding: 4rem;
+        background-color: white;
+        border-radius: 5px;
+        border: 2px solid dodgerblue;                                                                             ;
         h1{
-            font-size: $fontsize-lg;
+            text-align: center;
         }
         p{
-            padding: 1rem 0;
-            font-size: $fontsize-sm;
-            font-weight: $fontweight-x-lg;
+            padding: 2rem 0;
+            font-size: 1.4rem;
         }
-        a{
-            padding: 1.7rem 3rem;
-            background: $primary-color;
-            font-weight: $fontweight-lg;
-            font-size: $fontsize-x-sm;
-            border-radius: .4rem;
-            text-decoration: none;
-            color: $ternary-color;
-            transition: .5s;
-            &:hover{
-                background-color: $secondry-color;
+        .btn-shop{
+            display: flex;
+            justify-content: center;
+            a{
+                background-color: dodgerblue;
+                color: white;
+                padding: 2rem 4rem;
+                border-radius: 5px;
+                font-size: 1.5rem;
+                text-decoration: none;
+                transition: .8s;
+                &:hover{
+                    background-color:rgb(204, 50, 140);
+                    color: white;
+                }
             }
+           
 
         }
     }

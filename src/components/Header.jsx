@@ -26,7 +26,9 @@ function Header(){
                     recusandae aut voluptatibus odio nobis eveniet, 
                     doloribus soluta obcaecati?
                 </p>
-                <a href="">Shop Now</a>
+                <div class="btn-shop">
+             <a href="">Shop-Now</a>
+             </div>
             </div>
         </div>
         <div className="about-container">
