@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assests/logo.png";
+
 import React from "react";
 
 function Header(){
@@ -7,7 +7,7 @@ function Header(){
         <>
         <nav>
             <div className="logo">
-                <img src={logo} alt="logo" />
+                {/* <img src={logo} alt="logo" /> */}
             </div>
             <ul className="nav-links">
                 <li><a href="#">Home</a></li>
