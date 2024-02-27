@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-
 import React from "react";
-
 function Header(){
     return(
         <>
         <nav>
             <div className="logo">
-                {/* <img src={logo} alt="logo" /> */}
             </div>
             <ul className="nav-links">
                 <li><a href="#">Home</a></li>
