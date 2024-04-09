@@ -28,6 +28,42 @@ nav{
             cursor: pointer;
         }
     }
+    form{
+
+        height: auto;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $ternary-color;
+        border: 1px solid $primary-color;
+        border-radius: 20px;
+        gap: .4rem;
+        transform: .4s;
+        &:hover{
+            border: 1px solid $secondry-color;
+            i{
+                cursor: pointer;
+                border-right: 2px solid $secondry-color;
+            }
+        }
+        i{
+            font-size: 2rem;
+            padding: 0 1rem;
+            border-right: 2px solid $primary-color;
+            color: $secondry-color;
+            transform: .4s;
+        }
+        input{
+            padding: .7rem 0rem;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: none;
+            border: none;
+            outline: none;
+        }
+    
+    }
     .nav-links{
         @include flexs(flex,space-between,center,3rem);
         li{
@@ -47,6 +83,15 @@ nav{
                     color: $ternary-color;
                     font-weight: 800;
                 }
+            }
+        }
+        i{
+            font-size: 2rem;
+            color: $primary-color;
+            transition: .3s;
+            &:hover{
+                color: $secondry-color;
+                cursor: pointer;
             }
         }
     }

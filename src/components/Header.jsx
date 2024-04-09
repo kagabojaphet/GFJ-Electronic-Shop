@@ -1,17 +1,22 @@
 import { Link } from "react-router-dom";
 import React from "react";
-function Header(){
+import logo from "../assests/logo.png"
+function Header(props){
     return(
         <>
         <nav>
             <div className="logo">
+                <img src={logo} alt="" />
             </div>
+            <form action="">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search your item......" />
+            </form>
             <ul className="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Who We Are</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Order</a></li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Shop</a></li>
+                <i class="fa-solid fa-bars"></i>
             </ul>
         </nav>
         <div className="home-container">
@@ -28,8 +33,7 @@ function Header(){
              </div>
             </div>
         </div>
-        <div className="about-container">
-            
+        <div className="about-container">   
         </div>
         </>
     )
