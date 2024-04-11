@@ -9,6 +9,10 @@ return(
         <h1>{props.name}</h1>
         <p>{props.title}</p>
         <h5>Frw:{props.cost}</h5>
+        <div className="hover-container">
+            <a href="#">ADD TO CART</a>
+            <a href="#">VIEW MORE</a>
+        </div>
     </div>
     </>
 )
