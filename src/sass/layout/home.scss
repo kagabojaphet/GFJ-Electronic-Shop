@@ -1,0 +1,22 @@
+.home-container{
+    width: 100%;
+    height: auto;
+    background: #089;
+   .home{
+    width: 100%;
+    height: 100%;
+    .image{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 800px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-position: center;
+            // object-fit: cover;
+        }
+    }
+   }
+}

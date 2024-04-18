@@ -1,27 +1,27 @@
+
 import React, { useState } from 'react';
-import { Modal } from 'antd';
+import { Button, Modal } from 'antd';
 import { Image } from 'antd';
 
-
-const NewProps=(props)=>{
+const AllProps=(Allprops)=>{
     const [open, setOpen] = useState(false);
     const handleClick = () => {
-        window.location.href = '/Buy';
-      };
-return(
-    <>
-    <div className="props-container">
-        <h4>{props.new}</h4>
-        <img src={props.image} alt="" />
-        <h1>{props.name}</h1>
-        <p>{props.title}</p>
-        <h5>Frw:{props.cost}</h5>
-        <div className="hover-container">
-            <button>ADD TO CART</button>
-            <button onClick={() => setOpen(true)}>QUICK VIEW</button>
+      window.location.href = '/Buy';
+    };
+    return(
+        <>
+        <div className="all-props" onClick={() => setOpen(true)}>
+            <img src={Allprops.image}></img>
+            <h3>{Allprops.name}</h3>
+            <p>{Allprops.summary}</p>
+            <p>{Allprops.discription}</p>
+          <div className="btn-container">
+          {/* <button>ADD</button>
+            <button>BUY</button>
+            <button>VIEW</button> */}
+          </div>
         </div>
-    </div>
-    <Modal className='model'
+        <Modal className='model'
         title="Quick View"
         centered
         open={open}
@@ -31,11 +31,11 @@ return(
         >
         <div className='view-container'>
             <div className='view-image'>
-            <Image className='image' src={props.image}/>
+            <Image className='image' src={Allprops.image}/>
             </div>
             <div className='view-discription'>
-                <h1>{props.name}</h1>
-                <h3>{props.title}</h3>
+                <h1>{Allprops.name}</h1>
+                <h3>{Allprops.summary}</h3>
                 <p>Fell free to get in touch with me.I am always open to discussing new projects,
                    creative ideas or opportunities to be part of your visions.
                    Fell free to get in touch with me.I am always open to discussing new projects,
@@ -47,7 +47,7 @@ return(
             </div>
         </div>
       </Modal>
-    </>
-)
+        </>
+    )
 }
-export default NewProps
+export default AllProps
