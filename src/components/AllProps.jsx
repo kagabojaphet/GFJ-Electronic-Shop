@@ -11,7 +11,7 @@ const AllProps=(Allprops)=>{
     return(
         <>
         <div className="all-props" onClick={() => setOpen(true)}>
-            <img src={Allprops.image}></img>
+            <img src={Allprops.photo} alt="Image"></img>
             <h3>{Allprops.name}</h3>
             <p>{Allprops.summary}</p>
             <p>{Allprops.discription}</p>

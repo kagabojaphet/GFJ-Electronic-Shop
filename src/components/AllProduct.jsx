@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import AllProps from "./AllProps";
-import pro38 from "../assests/tablet.jpeg";
 import axios from "axios";
+import { upload } from "@testing-library/user-event/dist/upload";
+import { Upload } from "antd";
 
 
 const ProductAll=()=>{
@@ -24,7 +25,7 @@ const ProductAll=()=>{
         idea contact our team <a href="#">Contact</a></p>
         <div className="product">
         {team && team.data && team.data.map((row)=>(
-              <AllProps image={`http://localhost:3000/All${row.productImage}`} name={row.productName} summary={row.productTitle}/>
+              <AllProps photo={row.productImage} name={row.productName} summary={row.productTitle}/>
         ))}
         </div>
         </div>
