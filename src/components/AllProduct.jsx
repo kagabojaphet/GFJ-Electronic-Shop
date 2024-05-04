@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import AllProps from "./AllProps";
 import axios from "axios";
-import { upload } from "@testing-library/user-event/dist/upload";
-import { Upload } from "antd";
 
 
 const ProductAll=()=>{

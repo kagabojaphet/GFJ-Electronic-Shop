@@ -5,6 +5,7 @@ import { BrowserRouter as Router,Route,Routes,} from 'react-router-dom';
 import All from "./pages/All";
 import BuyPro from './pages/Buy';
 import Login from './components/login';
+import Admin from './components/Admin/Administor';
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
         <Route path='/All' element={<All/>}></Route>
         <Route path='/Buy' element={<BuyPro/>}></Route>
         <Route path='/Login' element={<Login/>}></Route>
+        <Route path='/Admin' element={<Admin/>}></Route>
       </Routes>
     </Router>
 
