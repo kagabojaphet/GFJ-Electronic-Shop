@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import axios from "axios";
 
 
+
 const Admin=()=>{
     const [activeButton, setActiveButton] = useState(null);
     const handleButtonClick = (buttonId) => {
@@ -37,6 +38,20 @@ const Admin=()=>{
         console.log('Error creating user',error)
     }
    }
+
+   const [data,setData] = useState([]);
+   useEffect(()=>{
+   const fetchData=async()=>{
+    try {
+        const response=await axios.get(`http://localhost:9090/api/v1/user`)
+        setData(response.data)
+    } catch (error) {
+        console.log(`Error get user`,error)
+    }
+   }
+   fetchData();
+   },[])
+   console.log(data)
 return(
     <>
     <div className="admin-container">
@@ -72,6 +87,8 @@ return(
                         <TextField id="outlined-basic" label="Role" variant="outlined" value={role} onChange={(e) => setrole(e.target.value)}/>
                         <button type="submit">Send</button>
                         </form>
+                    </div>
+                    <div className="table-container">
                     </div>
                 </div>)}
                 {activeButton === 2 &&  (<div className="product-container"></div>)}
