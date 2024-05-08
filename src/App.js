@@ -6,6 +6,7 @@ import All from "./pages/All";
 import BuyPro from './pages/Buy';
 import Login from './components/login';
 import Admin from './components/Admin/Administor';
+import TableUSer from './components/Admin/UserTable';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Route path='/Buy' element={<BuyPro/>}></Route>
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/Admin' element={<Admin/>}></Route>
+        <Route path='/Table' element={<TableUSer/>}></Route>
       </Routes>
     </Router>
 

@@ -4,6 +4,7 @@ import NavProps from "./NavbarProps";
 import userImage from "../../assests/device1.jpeg";
 import TextField from '@mui/material/TextField';
 import axios from "axios";
+import TableUSer from "./UserTable";
 
 
 
@@ -38,20 +39,6 @@ const Admin=()=>{
         console.log('Error creating user',error)
     }
    }
-
-   const [data,setData] = useState([]);
-   useEffect(()=>{
-   const fetchData=async()=>{
-    try {
-        const response=await axios.get(`http://localhost:9090/api/v1/user`)
-        setData(response.data)
-    } catch (error) {
-        console.log(`Error get user`,error)
-    }
-   }
-   fetchData();
-   },[])
-   console.log(data)
 return(
     <>
     <div className="admin-container">
@@ -89,6 +76,7 @@ return(
                         </form>
                     </div>
                     <div className="table-container">
+                        <TableUSer/>
                     </div>
                 </div>)}
                 {activeButton === 2 &&  (<div className="product-container"></div>)}

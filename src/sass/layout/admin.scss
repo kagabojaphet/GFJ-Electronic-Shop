@@ -10,7 +10,7 @@
         justify-content: center;
         align-items: center;
         .nav-top{
-            background: $primary-color;
+            background: rgb(9, 95, 121);
             padding: 1rem 4rem;
             width: 100%;
             position: sticky;
@@ -119,9 +119,10 @@
                         }
                     }
                     .table-container{
+                        padding: 0 4rem;
                         background: #979;
-                        width: 700px;
-                        height: 500px;
+                        width: 100%;
+                        height: auto;
                         display: flex;
                         justify-content: center;
                         align-items: center;
