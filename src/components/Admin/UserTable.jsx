@@ -31,7 +31,6 @@ const TableUSer=()=>{
 
 
   const [team, setTeam]= useState([])
-
   useEffect(()=>{
     const fetchProduct = async ()=>{
        const response = await axios.get(`http://localhost:9090/api/v1/user`)
@@ -40,6 +39,28 @@ const TableUSer=()=>{
     fetchProduct([])
   },[])
 
+
+  const [Update,setUpdate]=useState({});
+  const [formData,setFormData]=useState({
+   firstName:"",
+   lastName:"",
+   email:"",
+   phoneNumber:"",
+   password:"",
+   role:"",
+  });
+  const updateUSer= async () =>{
+   try {
+       const response=await axios.patch(`http://localhost:9090/api/v1/user/`,formData);
+       console.log(`user successfuly updated:`,response.data)
+       setUpdate(response.data)
+   } catch (error) {
+       console.log(`error:`,error)
+   }
+  }
+  const handleChange=e=>{
+   setFormData({...formData,[e.target.name]:e.target.value})
+  }
     return(
         <>
         <TableContainer component={Paper}>
@@ -68,7 +89,7 @@ const TableUSer=()=>{
           <TableCell align="right">{row.role}</TableCell>
           <TableCell align="right">
           <Button type="primary" danger onClick={() => handleDeleteUser(row._id)}>Delete</Button>
-          <Button type="primary" onClick={() => setOpen(true)}>Update</Button>
+          <Button type="primary" onClick={() => setOpen(row._id)}>Update</Button>
           </TableCell>
         </TableRow>
         ))}
@@ -80,15 +101,14 @@ const TableUSer=()=>{
         onCancel={() => setOpen(false)}
         footer={null}
         >
-          <form action="">
-                        <TextField id="outlined-basic" label="FirstName" variant="outlined" />
-                        <TextField id="outlined-basic" label="LastName" variant="outlined" />
-                        <TextField id="outlined-basic" label="Email" variant="outlined" />
-                        <TextField id="outlined-basic" label="PhoneNumber" variant="outlined" />
-                        <TextField id="outlined-basic" label="Password" variant="outlined"/>
-                        <TextField id="outlined-basic" label="ConfrimPassword" variant="outlined" />
-                        <TextField id="outlined-basic" label="Role" variant="outlined"/>
-                        <Button type="primary">Update</Button>
+          <form action="" onSubmit={updateUSer}>
+                        <TextField id="outlined-basic" label="FirstName" variant="outlined" name="fistName" value={formData.firstName} onChange={handleChange}/>
+                        <TextField id="outlined-basic" label="LastName" variant="outlined" name="lastName" value={formData.lastName} onChange={handleChange}/>
+                        <TextField id="outlined-basic" label="Email" variant="outlined" name="email" value={formData.email} onChange={handleChange}/>
+                        <TextField id="outlined-basic" label="PhoneNumber" variant="outlined" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
+                        <TextField id="outlined-basic" label="Password" variant="outlined" name="password" value={formData.password} onChange={handleChange}/>
+                        <TextField id="outlined-basic" label="Role" variant="outlined" name="role" value={formData.role} onChange={handleChange}/>
+                        <button type="submit">Update</button>
                         </form>
         </Modal>
         </TableBody>
