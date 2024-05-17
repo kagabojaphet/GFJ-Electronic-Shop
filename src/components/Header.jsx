@@ -7,6 +7,9 @@ function Header(props){
     const handleClick=()=>{
         setClicked(!clicked)
     }
+    const handleCart = () => {
+      window.location.href = '/Add';
+    };
     return(
         <>
         <nav>
@@ -19,7 +22,7 @@ function Header(props){
             </form>
             <ul className="nav-links">
                 <li><a href="#">Order</a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Shop</a></li>
+                <li><a href="#" onClick={handleCart}><i class="fa-solid fa-cart-shopping"></i>Shop</a></li>
                 <div className="menu" onClick={handleClick}>
                 <i class={clicked ? "fa-solid fa-xmark" :"fa-solid fa-bars"}></i>
                 <p>Menu</p>

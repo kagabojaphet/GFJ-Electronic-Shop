@@ -9,6 +9,7 @@ import Admin from './components/Admin/Administor';
 import TableUSer from './components/Admin/UserTable';
 import Add from './components/AddToCart';
 import AddtoCartProps from './components/AddProps';
+import Product from './components/ProAdmin/PpstProduct';
 function App() {
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
         <Route path='/Table' element={<TableUSer/>}></Route>
         <Route path='/Add' element={<Add/>}></Route>
         <Route path='/AddProps'  element={<AddtoCartProps/>}></Route>
+        <Route path='/Product'  element={<Product/>}></Route>
       </Routes>
     </Router>
 

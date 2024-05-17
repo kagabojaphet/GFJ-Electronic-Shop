@@ -89,7 +89,7 @@ const TableUSer=()=>{
           <TableCell align="right">{row.role}</TableCell>
           <TableCell align="right">
           <Button type="primary" danger onClick={() => handleDeleteUser(row._id)}>Delete</Button>
-          <Button type="primary" onClick={() => setOpen(row._id)}>Update</Button>
+          <Button type="primary" onClick={() => setOpen(window.history.pushState({},"",row._id))}>Update</Button>
           </TableCell>
         </TableRow>
         ))}
