@@ -1,0 +1,56 @@
+.addtocart-props{
+    background: white;
+    width: 100%;
+    height:auto;
+    border-bottom: 1px solid $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    .image{
+        width: 100px;
+        height: 100px;
+        img{
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            object-fit: cover;
+        }
+    }
+    .discription{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        .name{
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        .dispt{
+            font-size: 1.2rem;
+            font-family: 500;
+        }
+    }
+    .aquntity{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p{
+            font-size: 1.7rem;
+        }
+    }
+    .price{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p{
+            font-size: 1.5rem;
+        } 
+    }
+}
