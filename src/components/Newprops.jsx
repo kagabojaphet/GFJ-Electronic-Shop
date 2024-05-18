@@ -8,6 +8,13 @@ const NewProps=(props)=>{
     const handleClick = () => {
         window.location.href = '/Buy';
       };
+      const [IsOpen, setIsOpen] = useState(false);
+      const [productUrl, setProductUrl] = useState('');
+  
+      const handleOpen = ()=>{
+          setIsOpen(true)
+          setProductUrl(`/?id=${props.id}`);
+      }
 return(
     <>
     <div className="props-container">
@@ -17,7 +24,8 @@ return(
         <p>{props.title}</p>
         <h5>Frw:{props.cost}</h5>
         <div className="hover-container">
-            <button>ADD TO CART</button>
+            <button name={props.id} onClick={handleOpen}>ADD TO CART</button>
+            {window.history.pushState({}, '', productUrl)}
             <button onClick={() => setOpen(true)}>QUICK VIEW</button>
         </div>
     </div>

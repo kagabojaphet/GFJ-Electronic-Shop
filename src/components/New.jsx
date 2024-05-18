@@ -1,20 +1,25 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import NewProps from "./Newprops";
-import device1 from "../assests/device1.jpeg";
-import device2 from "../assests/device2.webp";
-import device3 from "../assests/device3.jpeg";
-import device4 from "../assests/device4.jpeg";
-import device5 from "../assests/device5.webp";
+import axios from "axios";
 
 const NewProduct=()=>{
+    const [team, setTeam]= useState([])
+
+    useEffect(()=>{
+      const fetchProduct = async ()=>{
+         const response = await axios.get(`http://localhost:9090/api/v1/product`)
+         setTeam(response.data)
+      };
+      fetchProduct([])
+    },[])
     return(
         <>
         <div className="newproduct-container">
-            <NewProps new="New" image={device1} name="Computer" title="HP new vision pro" cost="40,000"/>
-            <NewProps new="New" image={device2} name="Computer" title="HP new vision pro" cost="40,000"/>
-            <NewProps new="New" image={device3} name="Computer" title="HP new vision pro" cost="40,000"/>
-            <NewProps new="New" image={device4} name="Computer" title="HP new vision pro" cost="40,000"/>
-            <NewProps new="New" image={device5} name="Computer" title="HP new vision pro" cost="40,000"/>
+        {team && team.data && team.data.map((row)=>(
+            <NewProps new="New" image={row.productImage.url} name="Computer" title="HP new vision pro" cost="40,000" id={row._id}/>
+        ))}
         </div>
         </>
     )

@@ -5,6 +5,8 @@ import userImage from "../../assests/device1.jpeg";
 import TextField from '@mui/material/TextField';
 import axios from "axios";
 import TableUSer from "./UserTable";
+import ProductTable from "../ProAdmin/ProTable";
+import Product from "../ProAdmin/PpstProduct";
 
 
 
@@ -80,7 +82,10 @@ return(
                         <TableUSer/>
                     </div>
                 </div>)}
-                {activeButton === 2 &&  (<div className="product-container"></div>)}
+                {activeButton === 2 &&  (<div className="product-container">
+                    <Product/>
+                    <ProductTable/>
+                </div>)}
                 {activeButton === 3 && (<div className="contact-container"></div>)}
                 {activeButton === 4 && (<div className="payment-container"></div>)}
                 </div>

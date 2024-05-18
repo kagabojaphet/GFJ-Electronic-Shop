@@ -139,9 +139,14 @@
                     height: auto;
                 }
                 .product-container{
-                    background: rgb(167, 116, 5);
                     width: 100%;
                     height: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    gap: 4rem;
                 }
             }
         }

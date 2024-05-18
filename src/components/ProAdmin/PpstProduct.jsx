@@ -5,6 +5,7 @@ const Product=()=>{
     return(
         <>
         <div className="product-container">
+            <h1>Product Controller</h1>
         <form action="">
                         <TextField id="outlined-basic" label="productName" variant="outlined" name="productName"/>
                         <TextField id="outlined-basic" label="productTitle" variant="outlined" name="productTitle"/>

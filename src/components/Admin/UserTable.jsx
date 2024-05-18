@@ -6,14 +6,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, Flex } from 'antd';
+import { Button, Flex, Row } from 'antd';
 import axios from "axios";
 import { Modal } from 'antd';
 import TextField from '@mui/material/TextField';
 
 
 const TableUSer=()=>{
-  const [open, setOpen] = useState(false);
+
   const handleDeleteUser = async(productId) => {
     try {
       const response=await axios.delete(`http://localhost:9090/api/v1/user/${productId}`);
@@ -41,6 +41,8 @@ const TableUSer=()=>{
 
 
   const [Update,setUpdate]=useState({});
+  const Params=window.location.href.split("?id=")[1]
+  console.log(Params)
   const [formData,setFormData]=useState({
    firstName:"",
    lastName:"",
@@ -51,7 +53,7 @@ const TableUSer=()=>{
   });
   const updateUSer= async () =>{
    try {
-       const response=await axios.patch(`http://localhost:9090/api/v1/user/`,formData);
+       const response=await axios.patch(`http://localhost:9090/api/v1/user/${Params}`,formData);
        console.log(`user successfuly updated:`,response.data)
        setUpdate(response.data)
    } catch (error) {
@@ -61,6 +63,15 @@ const TableUSer=()=>{
   const handleChange=e=>{
    setFormData({...formData,[e.target.name]:e.target.value})
   }
+  const [open, setOpen] = useState(false);
+
+  const showModal = () => {
+    setOpen(true);
+  };
+
+  const hideModal = () => {
+    setOpen(false);
+  };
     return(
         <>
         <TableContainer component={Paper}>
@@ -89,28 +100,26 @@ const TableUSer=()=>{
           <TableCell align="right">{row.role}</TableCell>
           <TableCell align="right">
           <Button type="primary" danger onClick={() => handleDeleteUser(row._id)}>Delete</Button>
-          <Button type="primary" onClick={() => setOpen(window.history.pushState({},"",row._id))}>Update</Button>
+          <Button type="primary" onClick={()=>showModal(row._id && window.history.pushState({}, '', `/?id=${row._id}`))}>Update</Button>
           </TableCell>
         </TableRow>
         ))}
-        <Modal className='model'
-        title="Update User"
-        centered
+       <Modal
+        title="Modal"
         open={open}
-        onOk={() => setOpen(false)}
-        onCancel={() => setOpen(false)}
-        footer={null}
-        >
-          <form action="" onSubmit={updateUSer}>
-                        <TextField id="outlined-basic" label="FirstName" variant="outlined" name="fistName" value={formData.firstName} onChange={handleChange}/>
-                        <TextField id="outlined-basic" label="LastName" variant="outlined" name="lastName" value={formData.lastName} onChange={handleChange}/>
-                        <TextField id="outlined-basic" label="Email" variant="outlined" name="email" value={formData.email} onChange={handleChange}/>
-                        <TextField id="outlined-basic" label="PhoneNumber" variant="outlined" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
-                        <TextField id="outlined-basic" label="Password" variant="outlined" name="password" value={formData.password} onChange={handleChange}/>
-                        <TextField id="outlined-basic" label="Role" variant="outlined" name="role" value={formData.role} onChange={handleChange}/>
-                        <button type="submit">Update</button>
-                        </form>
-        </Modal>
+        onOk={hideModal}
+        onCancel={hideModal}
+      >
+      <form action="" onSubmit={updateUSer}>
+        <TextField id="outlined-basic" label="FirstName" variant="outlined" name="fistName" value={formData.firstName} onChange={handleChange}/>
+        <TextField id="outlined-basic" label="LastName" variant="outlined" name="lastName" value={formData.lastName} onChange={handleChange}/>
+        <TextField id="outlined-basic" label="Email" variant="outlined" name="email" value={formData.email} onChange={handleChange}/>
+        <TextField id="outlined-basic" label="PhoneNumber" variant="outlined" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
+        <TextField id="outlined-basic" label="Password" variant="outlined" name="password" value={formData.password} onChange={handleChange}/>
+        <TextField id="outlined-basic" label="Role" variant="outlined" name="role" value={formData.role} onChange={handleChange}/>
+        <button type="submit">Update</button>
+        </form>
+      </Modal>
         </TableBody>
       </Table>
     </TableContainer>

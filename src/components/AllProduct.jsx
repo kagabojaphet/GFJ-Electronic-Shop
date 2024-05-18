@@ -23,7 +23,7 @@ const ProductAll=()=>{
         idea contact our team <a href="#">Contact</a></p>
         <div className="product">
         {team && team.data && team.data.map((row)=>(
-              <AllProps photo={row.productImage} name={row.productName} summary={row.productTitle}/>
+              <AllProps photo={row.productImage.url} name={row.productName} summary={row.productTitle}/>
         ))}
         </div>
         </div>
