@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
 import { Image } from 'antd';
+import axios from 'axios';
 
 
 const NewProps=(props)=>{
@@ -12,8 +13,21 @@ const NewProps=(props)=>{
       const [productUrl, setProductUrl] = useState('');
   
       const handleOpen = ()=>{
+        const token = localStorage.getItem('token')
+        const Params=window.location.href.split("?id=")[1]
+        console.log(Params)
           setIsOpen(true)
-          setProductUrl(`/?id=${props.id}`);
+          setProductUrl(`/?id=${props.id}`)
+               const response =  axios.post(`http://localhost:9090/api/v1/cart/${Params}`,{
+                method: "POST",
+                   
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'electronic': token,
+                          },  
+               })
+               setOpen(response.data)
+         
       }
 return(
     <>
