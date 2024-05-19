@@ -1,0 +1,71 @@
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contact-form {
+        width: 500px;
+        padding: 4rem;
+        border: 2px solid $primary-color;
+        border-radius: 0.5rem;
+           .input-box {
+            position: relative;
+            width: 100%;
+            margin-top: 1rem;
+            input,
+            textarea {
+              width: 100%;
+              font-size: 1.6rem;
+              padding: 0.5rem 0;
+              margin: 1rem 0;
+              border: none;
+              border-bottom: 2px solid $primary-color;
+              outline: none;
+              resize: none;
+            }
+            span {
+                position: absolute;
+                left: 0;
+                padding: 0.5rem 0;
+                margin: 1rem 0;
+                font-size: 1.6rem;
+                pointer-events: none;
+                transition: all 0.5s;
+                color: #4d4d4d;
+              }
+            input:focus ~ span,
+            input:valid ~ span,
+            textarea:focus ~ span,
+            textarea:valid ~ span {
+               color: $primary-color;
+               font-size: 1.3rem;
+               font-weight: 700;
+               transform: translatey(-2rem);
+            }
+            input[type="submit"] {
+                width: 8rem;
+                background: white;
+                color: $primary-color;
+                border: none;
+                cursor: pointer;
+                /* padding: 1rem; */
+                font-size: 1.5rem;
+                transition: 0.3s;
+                font-weight: 600;
+                border-radius: 0.5rem;
+                border: 1px solid $primary-color;
+              }
+              input[type="submit"]:hover {
+                background: $primary-color;
+                color: white;
+              }
+          }
+      }
+}
+
+  
+ 
+
+
+  
+ 
+  
