@@ -16,14 +16,35 @@ const LoginSignup=()=>{
  }
 
  
-  const [email, setemail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleSignup = async (e) => {
+      e.preventDefault();
+      try {
+          const response = await axios.post('http://localhost:9090/api/v1/user', {
+            firstName,
+            lastName,
+          email,
+        phoneNumber,
+      password,
+    confirmPassword, });
+      alert('User registered successfully');
+      } catch (error) {
+          alert(error.response.data);
+      }
+  };
 
   const handleSubmit = async (e) => {
       e.preventDefault();
       try {
           const response = await axios.post('http://localhost:9090/api/v1/user/login', { email, password });
           localStorage.setItem('token', response.data.token);
+          console.log(response)
           alert('Login successful');
       } catch (error) {
           alert('Invalid credentials');
@@ -41,7 +62,7 @@ const LoginSignup=()=>{
               {login && (
                  <form action="" onSubmit={handleSubmit}>
                  <div className="input-box">
-                   <input type="text" name="email" required="required" value={email} onChange={(e) => setemail(e.target.value)}/>
+                   <input type="text" name="email" required="required" value={email} onChange={(e) => setEmail(e.target.value)}/>
                    <span>Email</span>
                  </div>
                  <div className="input-box">
@@ -55,29 +76,29 @@ const LoginSignup=()=>{
               )}
               
               {signup && (
-                <form action="">
+                <form action="" onSubmit={handleSignup}>
                 <div className="input-box">
-                  <input type="text" name=" " required="required" />
+                  <input type="text" name=" " required="required" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
                   <span>FirstName</span>
                 </div>
                 <div className="input-box">
-                  <input type="text" name=" " required="required" />
+                  <input type="text" name=" " required="required" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                   <span>LastName</span>
                 </div>
                 <div className="input-box">
-                  <input type="text" name=" " required="required" />
+                  <input type="text" name=" " required="required" value={email} onChange={(e) => setEmail(e.target.value)}/>
                   <span>Email</span>
                 </div>
                 <div className="input-box">
-                  <input type="text" name=" " required="required" />
+                  <input type="text" name=" " required="required" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
                   <span>PhoneNumber</span>
                 </div>
                 <div className="input-box">
-                  <input type="text" name=" " required="required" />
+                  <input type="text" name=" " required="required" value={password} onChange={(e) => setPassword(e.target.value)}/>
                   <span>Password</span>
                 </div>
                 <div className="input-box">
-                  <input type="text" name=" " required="required" />
+                  <input type="text" name=" " required="required" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
                   <span>ConfrimPassword</span>
                 </div>
                 <div className="input-box">
