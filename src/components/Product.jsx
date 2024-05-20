@@ -11,7 +11,7 @@ const ProductAll=()=>{
 
     useEffect(()=>{
       const fetchProduct = async ()=>{
-         const response = await axios.get(`http://localhost:9090/api/v1/product`)
+         const response = await axios.get(`https://electronic-shop-backend.onrender.com/api/v1/product`)
          setTeam(response.data)
       };
       fetchProduct([])
