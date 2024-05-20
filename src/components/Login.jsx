@@ -15,12 +15,20 @@ const LoginSignup=()=>{
     setSignup(true)
  }
 
- const LoginSignup = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
-}
+ 
+  const [email, setemail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          const response = await axios.post('http://localhost:9090/api/v1/user/login', { email, password });
+          localStorage.setItem('token', response.data.token);
+          alert('Login successful');
+      } catch (error) {
+          alert('Invalid credentials');
+      }
+  };
   
     return(
         <>
@@ -31,13 +39,13 @@ const LoginSignup=()=>{
             <button className={signup===true ? "active":""} onClick={Handlesignup}>Signup</button>
           </div>
               {login && (
-                 <form action="">
+                 <form action="" onSubmit={handleSubmit}>
                  <div className="input-box">
-                   <input type="text" name="email" required="required" />
+                   <input type="text" name="email" required="required" value={email} onChange={(e) => setemail(e.target.value)}/>
                    <span>Email</span>
                  </div>
                  <div className="input-box">
-                   <input type="text" name="password" required="required" />
+                   <input type="text" name="password" required="required" value={password} onChange={(e) => setPassword(e.target.value)}/>
                    <span>Password</span>
                  </div>
                  <div className="input-box">
