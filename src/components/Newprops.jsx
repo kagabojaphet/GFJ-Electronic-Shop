@@ -63,13 +63,16 @@ return(
         </div>
     </div>
     {form &&(
-      <Modal
-      open={opens}
-      onOk={hideModal}
-      onCancel={hideModal}
+    <Modal className='model'
+    title="Quick View"
+    centered
+    open={opens}
+    onOk={() => setOpen(false)}
+    onCancel={() => setOpen(false)}
+    footer={null}
     >
         <LoginSignup/>
-    </Modal>
+        </Modal>
     )}
     
     <Modal className='model'
