@@ -3,10 +3,35 @@
     justify-content: center;
     align-items: center;
     .contact-form {
-        width: 500px;
+        width: 400px;
+        height: auto;
         padding: 4rem;
         border: 2px solid $primary-color;
-        border-radius: 0.5rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        .form-option{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 5rem;
+          button{
+            padding: 1.3rem 2rem;
+            border-radius: 5px;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+          }
+          .active{
+            padding: 1.3rem 2rem;
+            border-radius: 5px;
+            border: 1px solid $primary-color;
+            color: white;
+            background-color: $primary-color;
+          }
+        }
            .input-box {
             position: relative;
             width: 100%;
@@ -47,7 +72,6 @@
                 color: $primary-color;
                 border: none;
                 cursor: pointer;
-                /* padding: 1rem; */
                 font-size: 1.5rem;
                 transition: 0.3s;
                 font-weight: 600;

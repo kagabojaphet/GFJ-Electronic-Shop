@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'antd';
 import { Image } from 'antd';
 import axios from 'axios';
+import LoginSignup from './Login';
 
 
 const NewProps=(props)=>{
@@ -11,22 +12,40 @@ const NewProps=(props)=>{
       };
       const [IsOpen, setIsOpen] = useState(false);
       const [productUrl, setProductUrl] = useState('');
-  
+      const [opens, setOpens] = useState(false);
+
+  const showModal = () => {
+    setOpens(true);
+  };
+
+  const hideModal = () => {
+    setOpens(false);
+  };
+      const [form,setForm]=useState(false);
+      const handleForm=()=>{
+        setForm(true)
+      }
       const handleOpen = ()=>{
         const token = localStorage.getItem('token')
         const Params=window.location.href.split("?id=")[1]
         console.log(Params)
           setIsOpen(true)
-          setProductUrl(`/?id=${props.id}`)
-               const response =  axios.post(`http://localhost:9090/api/v1/cart/${Params}`,{
-                method: "POST",
+          if(token.role==="user"){
+            setProductUrl(`/?id=${props.id}`)
+          }
+          else{
+            handleForm()
+            showModal()
+          }
+            //    const response =  axios.post(`http://localhost:9090/api/v1/cart/${Params}`,{
+            //     method: "POST",
                    
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'electronic': token,
-                          },  
-               })
-               setOpen(response.data)
+            //             headers: {
+            //                 'Content-Type': 'application/json',
+            //                 'electronic': token,
+            //               },  
+            //    })
+            //    setOpen(response.data)
          
       }
 return(
@@ -43,6 +62,16 @@ return(
             <button onClick={() => setOpen(true)}>QUICK VIEW</button>
         </div>
     </div>
+    {form &&(
+      <Modal
+      open={opens}
+      onOk={hideModal}
+      onCancel={hideModal}
+    >
+        <LoginSignup/>
+    </Modal>
+    )}
+    
     <Modal className='model'
         title="Quick View"
         centered
