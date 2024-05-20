@@ -30,7 +30,7 @@ const NewProps=(props)=>{
         const Params=window.location.href.split("?id=")[1]
         console.log(Params)
           setIsOpen(true)
-          if(token.role==="user"){
+          if(token){
             setProductUrl(`/?id=${props.id}`)
           }
           else{
@@ -63,16 +63,13 @@ return(
         </div>
     </div>
     {form &&(
-    <Modal className='model'
-    title="Quick View"
-    centered
-    open={opens}
-    onOk={() => setOpen(false)}
-    onCancel={() => setOpen(false)}
-    footer={null}
+      <Modal
+      open={opens}
+      onOk={hideModal}
+      onCancel={hideModal}
     >
-        <LoginSignup/>
-        </Modal>
+       <h1>hhhh</h1>
+    </Modal>
     )}
     
     <Modal className='model'
