@@ -3,6 +3,7 @@ import { Modal } from 'antd';
 import { Image } from 'antd';
 import axios from 'axios';
 import LoginSignup from './Login';
+import { jwtDecode } from 'jwt-decode';
 
 
 const NewProps=(props)=>{
@@ -27,27 +28,27 @@ const NewProps=(props)=>{
       }
       const handleOpen = ()=>{
         const token = localStorage.getItem('token')
-        const Params=window.location.href.split("?id=")[1]
-        console.log(Params)
-          setIsOpen(true)
-          if(token){
-            setProductUrl(`/?id=${props.id}`)
-          }
-          else{
-            handleForm()
-            showModal()
-          }
-            //    const response =  axios.post(`http://localhost:9090/api/v1/cart/${Params}`,{
-            //     method: "POST",
-                   
-            //             headers: {
-            //                 'Content-Type': 'application/json',
-            //                 'electronic': token,
-            //               },  
-            //    })
-            //    setOpen(response.data)
-         
-      }
+        if(!token){
+          handleForm()
+          showModal()
+        }
+        else{
+        const decodedToken=jwtDecode(token)
+        console.log(decodedToken.user.role)
+        if(decodedToken.user.role ==="admin"){
+          window.location.href = '/Admin';
+        }
+        else{
+          const Params=window.location.href.split("?id=")[1]
+          console.log(Params)
+            setIsOpen(true)
+            if(token){
+              setProductUrl(`/?id=${props.id}`)
+            }
+           
+        }
+        }
+        }
 return(
     <>
     <div className="props-container">

@@ -43,12 +43,17 @@ const LoginSignup=()=>{
       e.preventDefault();
       try {
           const response = await axios.post('http://localhost:9090/api/v1/user/login', { email, password });
-          localStorage.setItem('token', response.data.token);
-          console.log(response)
+          localStorage.setItem('token', response.data.message.token);
           alert('Login successful');
+          if(response.data.message.data.user.role ==="user"){
+            window.location.href = '/';
+          }
+          else{
+            window.location.href = '/Admin';
+          }
       } catch (error) {
           alert('Invalid credentials');
-      }
+      } 
   };
   
     return(
