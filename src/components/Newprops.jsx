@@ -26,7 +26,7 @@ const NewProps=(props)=>{
       const handleForm=()=>{
         setForm(true)
       }
-      const handleOpen = ()=>{
+      const handleOpen =async ()=>{
         const token = localStorage.getItem('token')
         if(!token){
           handleForm()
@@ -43,7 +43,19 @@ const NewProps=(props)=>{
           console.log(Params)
             setIsOpen(true)
             if(token){
-              setProductUrl(`/?id=${props.id}`)
+                const token = localStorage.getItem("token");
+                const response=axios.post(`http://localhost:9090/api/v1/cart/${props.id}`,{},{
+                  headers: {
+                    "electronic": token
+                }
+                });
+                if(!response){
+                  alert("Product not added")
+                }
+                else{
+                  alert("Product added")
+                }
+                 
             }
            
         }
