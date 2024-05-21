@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import logo from "../assests/logo.png";
+import logo from "../assests/logos.jpeg";
 
 
 function Header(props){
@@ -8,7 +8,13 @@ function Header(props){
         setClicked(!clicked)
     }
     const handleCart = () => {
-      window.location.href = '/Add';
+        const token=localStorage.getItem("token")
+        if(!token){
+            alert(`please make login`)
+        }
+        else{
+            window.location.href = '/Add';
+        }
     };
     return(
         <>
