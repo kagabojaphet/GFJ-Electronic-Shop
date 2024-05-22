@@ -22,10 +22,10 @@ const NewProps=(props)=>{
   const hideModal = () => {
     setOpens(false);
   };
-      const [form,setForm]=useState(false);
-      const handleForm=()=>{
-        setForm(true)
-      }
+      const [form, setForm] = useState(false);
+      const handleForm = () => {
+        setForm(true);
+      };
       const handleOpen =async ()=>{
         const token = localStorage.getItem('token')
         if(!token){

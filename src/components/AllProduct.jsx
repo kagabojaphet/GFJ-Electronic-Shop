@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import AllProps from "./AllProps";
+import AllProps  from "./AllProps";
 import axios from "axios";
 
 
@@ -23,7 +23,7 @@ const ProductAll=()=>{
         idea contact our team <a href="#">Contact</a></p>
         <div className="product">
         {team && team.data && team.data.map((row)=>(
-              <AllProps photo={row.productImage.url} name={row.productName} summary={row.productTitle}/>
+              <AllProps photo={row.productImage.url} name={row.productName} summary={row.productTitle} id={row._id}/>
         ))}
         </div>
         </div>
