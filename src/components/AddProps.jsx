@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from 'antd';
-const AddtoCartProps=(props,image)=>{
+const AddtoCartProps=(props)=>{
     return(
         <>
         <div className="addtocart-props">
             <div className="image">
 
               
-            <img src={image.replace(/"/g, "")} alt="name" style={{ width: '200px', height: '200px' }} />
+            <img src={props.image} alt="name" style={{ width: '200px', height: '200px' }} />
             </div>
             <div className="discription">
                 <p className="name">{props.name}</p>
