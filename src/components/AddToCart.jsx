@@ -25,9 +25,17 @@ const Add = () => {
         <div className="container">
           <div className="title">
             <h1>Shopping Cart</h1>
-            {team && team.map((row)=>(
-            <AddtoCartProps image={row.productImage.url} name={row.productName} quantity={row.quantity} price={row.productPrice}/>
-            ))}
+            {team && team.map((row) => {
+                    return (
+                        <AddtoCartProps
+                            key={row.productId}
+                            image={row.productImage.url}
+                            name={row.productName}
+                            quantity={row.quantity}
+                            price={row.productPrice}
+                        />
+                    );
+            })}
           </div>
           <div className="buy">
             <button>Proceed to Pay</button>
