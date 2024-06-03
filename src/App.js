@@ -10,7 +10,7 @@ import Add from './components/AddToCart';
 import AddtoCartProps from './components/AddProps';
 import Product from './components/ProAdmin/PpstProduct';
 import LoginSignup from './components/Login';
-import CardSlider from './components/Animate';
+
 function App() {
   return (
     <Router>
@@ -24,7 +24,7 @@ function App() {
         <Route path='/AddProps'  element={<AddtoCartProps/>}></Route>
         <Route path='/Product'  element={<Product/>}></Route>
         <Route path='/Signup' element={<LoginSignup/>}></Route>
-        <Route path='/Animate' element={<CardSlider/>}></Route>
+
       </Routes>
     </Router>
 
