@@ -10,7 +10,7 @@ const Home=()=>{
         <>
             <div className="home-container">
             <div className="home">
-             <Carousel autoplay>
+             <Carousel autoplay dots={false}>
               <div className="image">
                <img src={apple}></img>
               </div>
