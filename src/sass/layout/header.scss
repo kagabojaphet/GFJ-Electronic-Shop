@@ -1,7 +1,7 @@
 nav{
     padding: 0 5rem;
     background-color: white;
-    border-bottom: 1px solid $primary-color;
+    box-shadow: 1px 1px 1px $secondry-color;
     width: 100%;
     height: 100px;
     position: sticky;
@@ -57,71 +57,6 @@ nav{
             cursor: pointer;
         }
     }
-    form{
-        height: auto;
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: white;
-        border: 1px solid $primary-color;
-        border-radius: 20px;
-        gap: .4rem;
-        transform: .4s;
-        @media(max-width:692px){
-            gap: 2rem;
-        }
-        @media(max-width:630px){
-            gap: .5rem;
-        }
-        @media(max-width:214px){
-            gap: 0rem;
-        }
-        @media(max-width:214px){
-            width: 100px;
-        }
-        &:hover{
-            border: 1px solid $secondry-color;
-            i{
-                cursor: pointer;
-                border-right: 2px solid $secondry-color;
-            }
-        }
-        i{
-            font-size: 2rem;
-            padding: 0 1rem;
-            border-right: 2px solid $primary-color;
-            color: $secondry-color;
-            transform: .4s;
-            @media(max-width:692px){
-                font-size: 1.7rem;
-                padding: 0 .8rem;
-            }
-            @media(max-width:630px){
-                padding: 0 .5rem;
-            }
-            @media(max-width:214px){
-                padding: 0 .2rem;
-            }
-        }
-        input{
-            padding: .7rem 0rem;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-            border: none;
-            border: none;
-            outline: none;
-            @media(max-width:692px){
-                padding: .7rem .0rem,
-            }
-            @media(max-width:214px){
-                padding: .7rem .0rem;
-                width: 100%;
-                
-            }
-        }
-    
-    }
     .nav-links{
         @include flexs(flex,space-between,center,3rem);
         @media(max-width:812px){
@@ -136,12 +71,15 @@ nav{
             a{
                 text-decoration: none;
                 font-size: $fontsize-x-md;
-                color: $primary-color;
+                color: $secondry-color;
                 font-weight: $fontweight-x-lg;
                 padding: 2rem;
-                transition: .5s;
+                transition: .3s;
                 font-size: 2.2rem;
                 font-weight: 700;
+                &:hover{
+                    color: $primary-lg-color;
+                }
                 @media(max-width:754px){
                     padding: 2rem 1rem;
                 }
@@ -155,13 +93,14 @@ nav{
                  @media(max-width:280px){
                     padding: 1.5rem .5rem;
                  }
-                &:hover{
-                    background: $secondry-color;
-                    border-radius: .4rem;
-                    color: $ternary-color;
-                    font-weight: 800;
-                }
             }
+        }
+        .fa-user-plus{
+            color: $secondry-color;
+            font-size: 2rem;
+            &:hover{
+                color: $primary-lg-color;
+               }
         }
       .menu{
         display: flex;
@@ -177,21 +116,24 @@ nav{
         }
         .fa-bars{
             font-size: 2rem;
-            color: $primary-color;
-            transition: .5s;
+            color: $secondry-color;
+            transition: .3s;
+            &:hover{
+                color: $primary-lg-color;
+               }
         }
         .fa-xmark{
-            font-size: 2.5rem;
-            color: $primary-color;
-            transition: .5s;
-           
+            font-size: 2rem;
+            color: $secondry-color;
+            transition: .3s;
+           &:hover{
+            color: $primary-lg-color;
+           }
         }
         .drop-down{
             padding: 2rem;
             background: white;
-            border: 2px solid $primary-color;
             border-top: none;
-            border-radius: 5px;
             position: absolute;
             top:6rem;
             right: 0;
@@ -215,10 +157,11 @@ nav{
                 color: black;
                 font-weight: 100;
                 width: 100%;
-                border-bottom: 1px solid $primary-color;
+                border-bottom: 1px solid $secondry-color;
                 transition: .4s;
                 &:hover{
-                    border-bottom: 1px solid $secondry-color;
+                    border-left: 1px solid $primary-color;
+                    border-bottom: 1px solid $primary-color;
                     border-radius: 50%;
                 }
             }

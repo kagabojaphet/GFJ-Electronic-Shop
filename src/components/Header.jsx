@@ -1,5 +1,7 @@
 import React,{ useState } from "react";
 import logo from "../assests/logos.jpeg";
+import { AudioOutlined } from '@ant-design/icons';
+import { Input, Space } from 'antd';
 
 
 function Header(props){
@@ -16,22 +18,27 @@ function Header(props){
             window.location.href = '/Add';
         }
     };
+
+    const { Search } = Input;
+
     return(
         <>
         <nav>
             <div className="logo">
                 <img src={logo} alt="" />
             </div>
-            <form action="">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search your item......" />
-            </form>
+            <Search
+            placeholder="input search text"
+            allowClear
+            enterButton="Search"
+            size="mediam"
+            style={{}}
+            />
             <ul className="nav-links">
-                <li><a href="#">Order</a></li>
                 <li><a href="#" onClick={handleCart}><i class="fa-solid fa-cart-shopping"></i>Shop</a></li>
+                <i class="fa-solid fa-user-plus"></i>
                 <div className="menu" onClick={handleClick}>
                 <i class={clicked ? "fa-solid fa-xmark" :"fa-solid fa-bars"}></i>
-                <p>Menu</p>
                 <div className={clicked ? "drop-down" :"drop-none"} >
                 <a href="#">About</a>
                 <a href="#">Contact</a>
