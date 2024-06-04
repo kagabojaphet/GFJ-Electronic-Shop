@@ -73,9 +73,9 @@ return(
         <h3>Frw:{props.cost}</h3>
         </div>
         <div className="hover-container">
-            <button name={props.id} onClick={handleOpen}>ADD TO CART</button>
+            <button name={props.id} onClick={handleOpen}>add to cart</button>
             {window.history.pushState({}, '', productUrl)}
-            <button onClick={() => setOpen(true)}>QUICK VIEW</button>
+            <button onClick={() => setOpen(true)}>quick view</button>
         </div>
     </div>
     {form &&(
