@@ -58,12 +58,13 @@
             align-items: center;
             text-align: center;
             gap: 2rem;
+     
             .explorer{
                 text-decoration: none;
                 padding: 2rem;
                 background: $primary-lg-color;
                 border-radius: 50px;
-                color: white;
+                color: black;
                 font-size: 1.2rem;
                 font-weight: 700;
                 transition: .4s;
