@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import logo from "../assests/logos.jpeg";
 import { AudioOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
+import styled from 'styled-components';
 
 
 function Header(props){
@@ -21,19 +22,44 @@ function Header(props){
 
     const { Search } = Input;
 
+    const StyledSearch = styled(Search)`
+    .ant-input {
+      background-color: #f0f0f0;
+      border-color: #d9d9d9;
+      color: #000;
+    }
+    .ant-input:hover,
+    .ant-input:focus {
+      border-color: #40a9ff;
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+    .ant-input-suffix .ant-input-clear-icon {
+      color: #ff4d4f;
+    }
+    .ant-btn {
+      background-color: #494750;
+      border-color: #494750;
+      color: #fff;
+    }
+    .ant-btn:hover,
+    .ant-btn:focus {
+      background-color: #40a9;
+      border-color: #40a9;
+      color: #fff;
+    }
+  `;
+
     return(
         <>
         <nav>
             <div className="logo">
                 <img src={logo} alt="" />
             </div>
-            <Search
-            placeholder="input search text"
-            allowClear
-            enterButton="Search"
-            size="mediam"
-            style={{}}
-            />
+            <StyledSearch
+    placeholder="input search text"
+    enterButton="Search"
+    onSearch={value => console.log(value)}
+  />
             <ul className="nav-links">
                 <li><a href="#" onClick={handleCart}><i class="fa-solid fa-cart-shopping"></i>Shop</a></li>
                 <i class="fa-solid fa-user-plus"></i>
