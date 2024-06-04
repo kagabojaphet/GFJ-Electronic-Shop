@@ -25,7 +25,7 @@ function Header(props){
     const StyledSearch = styled(Search)`
     .ant-input {
       background-color: #f0f0f0;
-      border-color: #d9d9d9;
+      border-color: #494750;
       color: #000;
     }
     .ant-input:hover,
@@ -50,7 +50,7 @@ function Header(props){
                 backgroundColor: '#f0f0f0',
                 borderColor: '#d9d9d9',
                 color: '#000',
-                width: '300px', // Example width for input
+                width: '300px', 
               }}
              />
             <ul className="nav-links">

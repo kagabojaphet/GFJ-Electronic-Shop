@@ -68,7 +68,10 @@ return(
         <img src={props.image} alt="" />
         <h1>{props.name}</h1>
         <p>{props.title}</p>
-        <h5>Frw:{props.cost}</h5>
+        <div className="price">
+        <h3 className='disc'>Frw:{props.cost}</h3>
+        <h3>Frw:{props.cost}</h3>
+        </div>
         <div className="hover-container">
             <button name={props.id} onClick={handleOpen}>ADD TO CART</button>
             {window.history.pushState({}, '', productUrl)}

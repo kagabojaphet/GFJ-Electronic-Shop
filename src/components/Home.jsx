@@ -24,6 +24,16 @@ const Home=()=>{
               <img src={wash}></img>
               </div>
              </Carousel>
+             <div className="home-text">
+                <div className="text">
+                <h1>Electronics Shop</h1>
+                <p>Find & Buy whatever you need devices and stay tuned!!</p>
+                <div className="btn">
+                    <a className="explorer" href="">Exproler Now</a>
+                    <a className="get" href="">Get in Touch</a>
+                </div>
+                </div>
+             </div>
             </div>
             </div>
         </>

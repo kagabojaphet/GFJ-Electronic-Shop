@@ -58,7 +58,7 @@ nav{
         }
     }
     .nav-links{
-        @include flexs(flex,space-between,center,3rem);
+        @include flexs(flex,space-between,center,4rem);
         @media(max-width:812px){
             @include flexs(flex,space-between,center,1rem);
         }
@@ -73,7 +73,6 @@ nav{
                 font-size: $fontsize-x-md;
                 color: $secondry-color;
                 font-weight: $fontweight-x-lg;
-                padding: 2rem;
                 transition: .3s;
                 font-size: 2.2rem;
                 font-weight: 700;
