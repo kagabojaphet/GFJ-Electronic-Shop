@@ -84,7 +84,7 @@ const AllProps=(Proprops)=>{
         >
         <div className='view-container'>
             <div className='view-image'>
-            <Image className='image' src={Proprops.image}/>
+            <Image className='image' src={Proprops.photo}/>
             </div>
             <div className='view-discription'>
                 <h1>{Proprops.name}</h1>

@@ -1,13 +1,12 @@
 .all-contaioner{
     width: 100%;
     height: auto;
-    background-image: linear-gradient(180deg, #04acec, #04aaec00, #04aaec00, #04aaec00, #04aaec00, #04acec);
+    background-image: linear-gradient(180deg,#2e2d31,#535353 , #ffffffc4, #ffffffb4, #ffffff, #ffffff,#5a5a5a, #3b3b3b);
     padding: 0 5rem 4rem 5rem;
     text-align: center;
         .text{
-
-            font-size: 1.8rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 100;
             z-index: 8;
             line-height: 24px;
             letter-spacing: 0px;
@@ -15,11 +14,10 @@
             color: white;
             padding: 4rem 0;
             a{
-                color: $secondry-color;
+                color: $primary-lg-color;
                 font-weight: 700;
             }
         }
-    
     .product{
         width: 100%;
         height: 100%;
@@ -29,8 +27,8 @@
         align-items: center;
         gap: 4rem;
         .all-props{
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -39,20 +37,23 @@
             border-radius: 5px;
             transition: .6s;
             border-radius: 50%;
-            border: 2px solid $primary-color;
+            border: 2px solid $secondry-color;
             &:hover{
-                width: 300px;
+                width: 200px;
                 height: auto;
                 border-radius: 10px;
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
-                border: 2px solid $secondry-color;
+                border: 2px solid $primary-lg-color;
                 cursor: pointer;
                 img{
                     width: 100%;
-                    height: 200px;
-                    border-radius: 9px;
+                    height: 100px;
+                    border-top-left-radius: 9px;
+                    border-top-right-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
                 }
                 h3{
                     display: block;

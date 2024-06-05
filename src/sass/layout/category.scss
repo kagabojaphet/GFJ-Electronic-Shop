@@ -2,27 +2,27 @@
     background: white;
     width: 100%;
     height: auto;
-    padding: 0 5rem 4rem 5rem;
+    padding: 0 5rem ;
     .category{
         display:  flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 4rem;
+        width: 100%;
+        gap: 3rem;
         h1{
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 100;
         }
         .category-pagraph{
-            width: 80%;
+            width: 100%;
             height: auto;
-            padding: 4rem 0;
             @media(max-width:867px){
                 width: auto;
                 height: auto;
             }
             p{
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 font-weight: 100;
                 z-index: 8;
                 line-height: 24px;
@@ -33,36 +33,39 @@
         .category-option{
            display: flex;
            flex-wrap: wrap;
-           justify-content: center;
+           justify-content: space-between;
            align-self: center;
            text-align: center;
-           gap: 4rem;
-           width: auto;
+           width:100%;
            height: auto;
             .option{
-            width: 300px;
+            width: 200px;
             height: auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             padding: 2rem;
             gap: 2rem;
             border-radius: 5px;
-            border-right: 1px solid $primary-color;
-            border-bottom: 1px solid $primary-color;
-            transform: .4s;
+            border-right: 1px solid $secondry-color;
+            border-bottom: 1px solid $secondry-color;
+            transform: .3s;
             @media(max-width:500px){
                 width: auto;
                 height: auto;
             }
             &:hover{
-            border-right: 1px solid $secondry-color;
-            border-bottom: 1px solid $secondry-color;
+            border-right: 1px solid $primary-color;
+            border-bottom: 1px solid $primary-color;
+            i{
+                color: $primary-lg-color;
+            }
             }
                 i{
-                    font-size: 6rem;
+                    font-size: 4rem;
+                    color: $secondry-color;
                 }
                 p{
                     font-weight: 100;
@@ -76,7 +79,10 @@
             }
         
         }
-        i{font-size: 6rem;}
+        i{
+            font-size: 6rem;
+            color: $secondry-color;
+        }
  
     }
 }

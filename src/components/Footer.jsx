@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assests/logo.png";
+import logo from "../assests/logos.jpeg";
 
 const Footer=()=>{
     const currentYear = new Date().getFullYear();
@@ -32,10 +32,8 @@ const Footer=()=>{
                     </p>
                 </div>
                 <div className="media">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-google"></i></a>
                 <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
