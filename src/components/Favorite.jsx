@@ -4,7 +4,7 @@ const FavoriteProduct=()=>{
     return(
         <>
         <div className="favorite-product">
-        <h1>Choose your Favorite Device</h1>
+        <h1>Choose your Favorite Device & Top Search</h1>
             <div className="favorite">
                 <a href="#">computer</a>
                 <a href="#">computer</a>

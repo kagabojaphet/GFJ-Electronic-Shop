@@ -21,7 +21,7 @@ const ProductAll=()=>{
         <div className="product-contaioner">
         <div className="product">
         {team && team.data && team.data.map((row)=>(
-        <ProductProps image={row.productImage.url} name={row.productName} summary={row.productTitle}/>
+        <ProductProps image={row.productImage.url} name={row.productName} summary={row.productTitle} disc={row.productDiscount} price={row.productPrice}/>
         ))}
         </div>
         </div>

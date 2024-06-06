@@ -1,10 +1,50 @@
-import React from "react";
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import Button from '@mui/material/Button';
 import GetProps from "./GetProps";
+import { styled } from '@mui/system';
+
+
+
+
+const CustomTextField = styled(TextField)(({ borderColor, labelColor }) => ({
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: borderColor || 'black', 
+      borderWidth: '1px', 
+    },
+    '&:hover fieldset': {
+      borderColor: borderColor || 'black',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: borderColor || 'black',
+    },
+  },
+  '& .MuiInputLabel-root': {
+    color: labelColor || 'black',
+  },
+  '& .MuiInputLabel-root.Mui-focused': {
+    color: labelColor || 'black',
+  },
+}));
+
+const CustomButton = styled(Button)(({ theme }) => ({
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', // gradient background
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)', // shadow
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    fontSize: '12px',
+    '&:hover': {
+      background: 'linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%)', // gradient background on hover
+    },
+  }));
 
 const GetinTouch=()=>{
+    const [borderColor, setBorderColor] = useState('gray');
+    const [labelColor, setLabelColor] = useState('#000');
     return(
         <>
             <div className="getintouch-container">
@@ -14,44 +54,35 @@ const GetinTouch=()=>{
              creative ideas or opportunities to be part of your visions.</p></div>
                 <div className="getintouch">
                     <div className="left">
-                      <TextField 
-                       id="outlined-password-input"
-                       label="Fullname"
-                       type="text"
-                       autoComplete="current-password"
-                       InputLabelProps={{ style: { fontWeight: 'bold' } }}
-                       InputLabelProps={{ style: { fontSize: '15px'} }}
-                     />
-                      <TextField 
-                       id="outlined-password-input"
-                       label="email"
-                       type="text"
-                       autoComplete="current-password"
-                       InputLabelProps={{ style: { fontWeight: 'bold' } }}
-                       InputLabelProps={{ style: { fontSize: '15px'} }}
-                       InputProps={{ style: { fontSize: '15px' } }}
-                     />
-                      <TextField
-                      fullWidth 
-                       id="outlined-password-input"
-                       label="Subject"
-                       type="text"
-                       autoComplete="current-password"
-                       InputLabelProps={{ style: { fontWeight: 'bold' } }}
-                       InputLabelProps={{ style: { fontSize: '15px'} }}
-                       InputProps={{ style: { fontSize: '15px' } }}
-                     />
-                      <TextField
-                      fullWidth 
-                       id="outlined-password-input"
-                       label="Message"
-                       type="text"
-                       autoComplete="current-password"
-                       InputLabelProps={{ style: { fontWeight: 'bold' } }}
-                       InputLabelProps={{ style: { fontSize: '15px'} }}
-                       InputProps={{ style: { fontSize: '15px' } }}
-                     />
-                     <Button variant="outlined" style={{ fontSize: '14px' }}>Send</Button>
+                    <CustomTextField 
+                    label="FullName" 
+                    variant="outlined" 
+                    borderColor={borderColor} 
+                    labelColor={labelColor} 
+                    fullWidth
+                    />
+                    <CustomTextField 
+                    label="Email" 
+                    variant="outlined" 
+                    borderColor={borderColor} 
+                    labelColor={labelColor} 
+                    fullWidth
+                    />
+                    <CustomTextField 
+                    label="Subject" 
+                    variant="outlined" 
+                    borderColor={borderColor} 
+                    labelColor={labelColor} 
+                    fullWidth
+                    />
+                    <CustomTextField 
+                    label="Message" 
+                    variant="outlined" 
+                    borderColor={borderColor} 
+                    labelColor={labelColor} 
+                    fullWidth
+                    />
+                       <CustomButton>Send</CustomButton>
                     </div>
                     <div className="right">
                         <h3>Stay in touch with us</h3>
