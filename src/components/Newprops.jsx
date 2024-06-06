@@ -4,6 +4,7 @@ import { Image } from 'antd';
 import axios from 'axios';
 import LoginSignup from './Login';
 import { jwtDecode } from 'jwt-decode';
+import { format } from 'date-fns';
 
 
 const NewProps=(props)=>{
@@ -61,12 +62,17 @@ const NewProps=(props)=>{
         }
         }
         }
+        const today = new Date();
+        const formattedDate = format(today, 'MM/dd/yyyy'); 
 return(
     <>
     <div className="props-container">
-        <h4>{props.new}</h4>
+        <h4 className='new'>{props.new}</h4>
         <img src={props.image} alt="" />
-        <h1>{props.name}</h1>
+        <div className="name">
+        <h2>{props.name}</h2>
+        <p>{formattedDate}</p>
+        </div>
         <p>{props.title}</p>
         <div className="price">
         <h3 className='disc'>Frw:{props.cost}</h3>

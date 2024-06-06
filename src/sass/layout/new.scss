@@ -15,21 +15,42 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        text-align: left;
         position: relative;
         padding: 1rem;
         border-radius: 5px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         transition: .4s;
         background: white;
-        h1{
-            font-size: 1rem;
+        .new{
+            color: white;
             font-weight: 900;
         }
+       .name{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        h2{
+            font-weight: 900;
+            font-size: 1.5rem;
+            align-self: first baseline;
+        }
+        p{
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: $secondry-color;
+        }
+       }
+       p{
+        align-self: first baseline;
+        color: $secondry-color;
+        font-weight: 500;
+       }
         .price{
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-self: first baseline;
             gap: 2rem;
             h3{
                 font-size: 1.4rem;
@@ -41,12 +62,11 @@
                 font-size: 1.4rem;
                 text-decoration: line-through 2px solid $primary-lg-color;
             }
-            h5{
-                font-size: 2rem;
-
-            }
         }
+
+        transition: .3s;
         &:hover{
+            border: 1px solid $primary-color;
             h4{
             background: white;
             color: $primary-lg-color;
