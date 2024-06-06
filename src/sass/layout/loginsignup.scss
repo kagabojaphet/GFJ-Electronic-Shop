@@ -5,8 +5,7 @@
     .contact-form {
         width: 400px;
         height: auto;
-        padding: 4rem;
-        border: 2px solid $primary-color;
+        padding: 4rem ;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
@@ -21,41 +20,45 @@
           button{
             padding: 1.3rem 2rem;
             border-radius: 5px;
-            border: 1px solid $primary-color;
-            color: $primary-color;
+            border: 1px solid $secondry-color;
+            color: $secondry-color;
           }
           .active{
             padding: 1.3rem 2rem;
             border-radius: 5px;
-            border: 1px solid $primary-color;
+            border:none;
             color: white;
-            background-color: $primary-color;
+            background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
           }
         }
            .input-box {
             position: relative;
             width: 100%;
             margin-top: 1rem;
+            color: black;
             input,
             textarea {
               width: 100%;
-              font-size: 1.6rem;
+              font-size: 1.4rem;
               padding: 0.5rem 0;
               margin: 1rem 0;
+              font-weight: 100;
               border: none;
-              border-bottom: 2px solid $primary-color;
+              border-bottom: 1px solid $secondry-color;
               outline: none;
               resize: none;
+              color: $secondry-color;
             }
             span {
                 position: absolute;
                 left: 0;
                 padding: 0.5rem 0;
                 margin: 1rem 0;
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 pointer-events: none;
                 transition: all 0.5s;
-                color: #4d4d4d;
+                color: $secondry-color;
+                font-weight: 700;
               }
             input:focus ~ span,
             input:valid ~ span,
@@ -67,19 +70,24 @@
                transform: translatey(-2rem);
             }
             input[type="submit"] {
-                width: 8rem;
-                background: white;
-                color: $primary-color;
+                padding: 1.3rem 0;
+                background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+                color: white;
+                font-weight: 900;
                 border: none;
                 cursor: pointer;
                 font-size: 1.5rem;
                 transition: 0.3s;
                 font-weight: 600;
                 border-radius: 0.5rem;
-                border: 1px solid $primary-color;
+                border: 0;
+                border-radius: 3;
+                box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+                color: white;
+                height: 48;
               }
               input[type="submit"]:hover {
-                background: $primary-color;
+                background: linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%);
                 color: white;
               }
           }

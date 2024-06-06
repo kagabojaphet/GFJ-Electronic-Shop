@@ -89,6 +89,7 @@ return(
       open={opens}
       onOk={hideModal}
       onCancel={hideModal}
+      footer={null}
     >
        <LoginSignup/>
     </Modal>

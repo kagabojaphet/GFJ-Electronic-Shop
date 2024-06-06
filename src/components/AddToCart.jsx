@@ -10,12 +10,16 @@ const Add = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`http://localhost:9090/api/v1/cart/one`,{
+      if(!token){
+        alert("No Token Providede")
+      }
+      else{const response = await axios.get(`http://localhost:9090/api/v1/cart/one`,{
         headers: {
           "electronic": token
       }
       });
-      setTeam(response.data);
+      setTeam(response.data)}
+      ;
     };
     fetchProduct([]);
   }, []);
