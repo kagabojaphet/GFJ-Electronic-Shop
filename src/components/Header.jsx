@@ -38,7 +38,6 @@ function Header(props){
    
     }
   `;
-  const [IsOpen, setIsOpen] = useState(false);
   const [opens, setOpens] = useState(false);
 
   const showModal = () => {
@@ -48,29 +47,10 @@ function Header(props){
   const hideModal = () => {
     setOpens(false);
   };
-      const [form, setForm] = useState(false);
-      const handleForm = () => {
-        setForm(true);
-      };
-      const handleOpen =async ()=>{
-        const token = localStorage.getItem('token')
-        if(!token){
-          handleForm()
-          showModal()
-        }
-        else{
-        const decodedToken=jwtDecode(token)
-        console.log(decodedToken.user.role)
-        if(decodedToken.user.email ==="email"){
-            alert("You are Already Login")
-          
-        }
-        else{
-         
-            window.location.href = '/'; 
-        }
-        }
-        }
+  function handleOpen(){
+    showModal()
+  }
+
     return(
         <>
         <nav>
@@ -90,7 +70,10 @@ function Header(props){
               }}
              />
             <ul className="nav-links">
+                <div className="cart">
+                <p>0</p>
                 <li><a href="#" onClick={handleCart}><i class="fa-solid fa-cart-shopping"></i>Shop</a></li>
+                </div>
                 <i class="fa-solid fa-user-plus" onClick={handleOpen}></i>
                 <div className="menu" onClick={handleClick}>
                 <i class={clicked ? "fa-solid fa-xmark" :"fa-solid fa-bars"}></i>
@@ -103,13 +86,12 @@ function Header(props){
                 </div>
                 </div>
                 <Modal
-      open={opens}
-      onOk={hideModal}
-      onCancel={hideModal}
-      footer={null}
-    >
-       <LoginSignup/>
-    </Modal>
+                 open={opens}
+                 onOk={hideModal}
+                 onCancel={hideModal}
+                footer={null}>
+                <LoginSignup/>
+               </Modal>
             </ul>
         </nav>
        

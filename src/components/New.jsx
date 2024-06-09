@@ -18,7 +18,7 @@ const NewProduct=()=>{
         <>
         <div className="newproduct-container">
         {team && team.data && team.data.map((row)=>(
-            <NewProps new="New" image={row.productImage.url} name="Computer" title="HP new vision pro" cost="40,000" id={row._id}/>
+            <NewProps new="New" image={row.productImage.url}  id={row._id} name={row.productName} title={row.productTitle} disc={row.productDiscount} price={row.productPrice}  discription={row.productDescription}/>
         ))}
         </div>
         </>

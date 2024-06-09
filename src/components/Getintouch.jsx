@@ -29,7 +29,7 @@ const CustomTextField = styled(TextField)(({ borderColor, labelColor }) => ({
 }));
 
 const CustomButton = styled(Button)(({ theme }) => ({
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', // gradient background
+    background: 'linear-gradient(45deg, #dc2c10 30%, #494750 90%)', // gradient background
     border: 0,
     borderRadius: 3,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)', // shadow
@@ -38,7 +38,7 @@ const CustomButton = styled(Button)(({ theme }) => ({
     padding: '0 30px',
     fontSize: '12px',
     '&:hover': {
-      background: 'linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%)', // gradient background on hover
+      background: 'linear-gradient(45deg,#494750  30%,  #dc2c10  90%)', // gradient background on hover
     },
   }));
 

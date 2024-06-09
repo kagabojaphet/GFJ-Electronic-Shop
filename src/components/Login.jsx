@@ -75,7 +75,7 @@ const LoginSignup=()=>{
                    <span>Password</span>
                  </div>
                  <div className="input-box">
-                   <input type="submit" value="Send" />
+                   <input type="submit" value="Login" />
                  </div>
                </form>
               )}
@@ -107,7 +107,7 @@ const LoginSignup=()=>{
                   <span>ConfrimPassword</span>
                 </div>
                 <div className="input-box">
-                  <input type="submit" value="Send" />
+                  <input type="submit" value="Sign Up" />
                 </div>
               </form>
               )}

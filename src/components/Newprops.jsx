@@ -75,13 +75,13 @@ return(
         </div>
         <p>{props.title}</p>
         <div className="price">
-        <h3 className='disc'>Frw:{props.cost}</h3>
-        <h3>Frw:{props.cost}</h3>
+        <h3 className='disc'>Frw:{props.disc}</h3>
+        <h3>Frw:{props.price}</h3>
         </div>
         <div className="hover-container">
-            <button name={props.id} onClick={handleOpen}>add to cart</button>
+            <button name={props.id} onClick={handleOpen}>Add to Cart</button>
             {window.history.pushState({}, '', productUrl)}
-            <button onClick={() => setOpen(true)}>quick view</button>
+            <button onClick={() => setOpen(true)}>Quick View</button>
         </div>
     </div>
     {form &&(
@@ -108,15 +108,20 @@ return(
             <Image className='image' src={props.image}/>
             </div>
             <div className='view-discription'>
-                <h1>{props.name}</h1>
-                <h3>{props.title}</h3>
-                <p>Fell free to get in touch with me.I am always open to discussing new projects,
-                   creative ideas or opportunities to be part of your visions.
-                   Fell free to get in touch with me.I am always open to discussing new projects,
-                   creative ideas or opportunities to be part of your visions.</p>
+               <div className="discription">
+               <div className="names">
+               <h1>{props.name}</h1>
+               <h3>{props.title}</h3>
+               </div>
+                <div className="cost">
+                <h3 className='disc'>Frw:{props.disc}</h3>
+                <h3 className='price'>Frw:{props.price}</h3>
+                </div>
+               </div>
+                <p>{props.discription}</p>
                    <div className='btn'>
-                   <button onClick={handleClick}>BUY NOW</button>
-                   <button>ADD TO CART</button>
+                   <button onClick={handleClick}>Buy Now</button>
+                   <button>Add to Cart</button>
                    </div>
             </div>
         </div>

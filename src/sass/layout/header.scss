@@ -66,6 +66,35 @@ nav{
             display: flex;
             flex-direction: column;
         }
+        .cart{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: .3s;
+            p{
+                position: absolute;
+                left: 1.5rem;
+                bottom: 2.4rem;
+                padding: .5rem .7rem;
+                border-radius: 50%;
+                color: white;
+                font-weight: 900;
+                background: $secondry-color;
+            }
+            &:hover{
+                p{
+                    background: $primary-lg-color
+                }
+                i{
+                    color: $primary-lg-color;
+                }
+                a{
+                    color: $primary-lg-color;
+                }
+            }
+        }
         li{
             list-style-type: none;
             a{

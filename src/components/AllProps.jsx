@@ -67,7 +67,7 @@ const AllProps=(Proprops)=>{
             <img src={Proprops.photo} alt="Image"></img>
             <h3>{Proprops.name}</h3>
             <p>{Proprops.summary}</p>
-            <p>{Proprops.discription}</p>
+        
           <div className="btn-container">
           {/* <button>ADD</button>
             <button>BUY</button>
@@ -87,15 +87,20 @@ const AllProps=(Proprops)=>{
             <Image className='image' src={Proprops.photo}/>
             </div>
             <div className='view-discription'>
-                <h1>{Proprops.name}</h1>
-                <h3>{Proprops.summary}</h3>
-                <p>Fell free to get in touch with me.I am always open to discussing new projects,
-                   creative ideas or opportunities to be part of your visions.
-                   Fell free to get in touch with me.I am always open to discussing new projects,
-                   creative ideas or opportunities to be part of your visions.</p>
+            <div className="discription">
+               <div className="names">
+               <h1>{Proprops.name}</h1>
+               <h3>{Proprops.summary}</h3>
+               </div>
+                <div className="cost">
+                <h3 className='disc'>Frw:{Proprops.disc}</h3>
+                <h3 className='price'>Frw:{Proprops.price}</h3>
+                </div>
+               </div>
+                <p>{Proprops.discription}</p>
                    <div className='btn'>
-                   <button id={Proprops.id}onClick={handleClick}>BUY NOW</button>
-                   <button onClick={handleOpen}>ADD TO CART</button>
+                   <button id={Proprops.id}onClick={handleClick}>Buy Now</button>
+                   <button onClick={handleOpen}>Add to Cart</button>
                    </div>
             </div>
             {form &&(
