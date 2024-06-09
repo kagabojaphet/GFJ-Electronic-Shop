@@ -155,10 +155,11 @@
                     text-align: center;
                 }
                 a{
-                    padding: 1.3rem;
+                    padding: 1.1rem;
                     font-size: 2rem;
                     background: white;
                     border-radius: 50%;
+                    border: 1px solid $ternary-color;
                     color: $primary-lg-color;
                     transition: .5s;
                    
