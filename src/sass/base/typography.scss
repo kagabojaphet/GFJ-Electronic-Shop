@@ -5,6 +5,11 @@
 // html, body {
 //     overflow-x: hidden;
 //   }
+@media(max-width:366px){
+  html, body {
+    overflow-x: hidden;
+  }
+}
   body {
     position: relative;
     overflow-x: hidden;
