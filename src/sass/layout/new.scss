@@ -205,11 +205,12 @@
                     text-align: left;
                     h1{
                         font-size: 1.6rem;
-                        font-weight: 700;
+                        font-family: "Fira Sans Condensed", sans-serif;
+                        font-weight: 500;
                     }
                     h3{
-                        font-size: 1.3rem;
-                        font-weight: 600;
+                        font-size: 1.5rem;
+                        font-weight: 400;
                         color: $secondry-color;
                     }
                 }
@@ -221,9 +222,11 @@
                     text-align: right;
                     .disc{
                         text-decoration: line-through 2px solid $primary-lg-color;
+                        font-weight: 300;
                     }
                     .price{
                         color: $primary-lg-color;
+                        font-weight: 300;
                     }
                 }
             }
@@ -235,13 +238,14 @@
                 padding: 2rem 0;
                 color: $secondry-color;
                 font-weight: 100;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 font-weight: 100;
                 z-index: 8;
             }
            .btn{
             display: flex;
-            justify-content:first baseline;
+            flex-direction: column;
+            justify-content:center;
             gap: 2rem;
             button{
                 padding: 1.2rem;
@@ -252,7 +256,7 @@
                 border: none;
                 color: white;
                 font-weight: 700;
-                transition: .4s;
+                transition: .5s;
                 &:hover{
                     background: linear-gradient(45deg, #494750 30%, #eb4923 90%);
                 }

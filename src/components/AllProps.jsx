@@ -66,7 +66,6 @@ const AllProps=(Proprops)=>{
         <div className="all-props" onClick={() => setOpen(true)}>
             <img src={Proprops.photo} alt="Image"></img>
             <h3>{Proprops.name}</h3>
-            <p>{Proprops.summary}</p>
         
           <div className="btn-container">
           {/* <button>ADD</button>
