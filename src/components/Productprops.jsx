@@ -11,8 +11,8 @@ const ProductProps=(props)=>{
             <h3>{props.name}</h3>
             <p>{props.summary}</p>
           <div className="cost-container">
-            <div className="disc">Frw:{props.disc}</div>
-            <div className="price">Frw:{props.price}</div>
+            <div className="disc">Frw: {props.disc}</div>
+            <div className="price">Frw: {props.price}</div>
           </div>
         </div>
         </>

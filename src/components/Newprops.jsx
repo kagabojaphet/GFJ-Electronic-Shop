@@ -75,8 +75,8 @@ return(
         </div>
         <p>{props.title}</p>
         <div className="price">
-        <h3 className='disc'>Frw:{props.disc}</h3>
-        <h3>Frw:{props.price}</h3>
+        <h3 className='disc'>Frw: {props.disc}</h3>
+        <h3>Frw: {props.price}</h3>
         </div>
         <div className="hover-container">
             <button name={props.id} onClick={handleOpen}>Add to Cart</button>
@@ -114,8 +114,8 @@ return(
                <h3>{props.title}</h3>
                </div>
                 <div className="cost">
-                <h3 className='disc'>Frw:{props.disc}</h3>
-                <h3 className='price'>Frw:{props.price}</h3>
+                <h3 className='disc'>Frw: {props.disc}</h3>
+                <h3 className='price'>Frw: {props.price}</h3>
                 </div>
                </div>
                 <p>{props.discription}</p>

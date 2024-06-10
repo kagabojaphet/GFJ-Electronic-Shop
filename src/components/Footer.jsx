@@ -41,7 +41,7 @@ const Footer=()=>{
             </div>
             </div>
             <div className="copyright">
-                <p>&copy; {currentYear} GFJElectronic Shop</p>
+                <p>&copy; {currentYear} Electronics-Shop</p>
                 </div>
         </>
     )
