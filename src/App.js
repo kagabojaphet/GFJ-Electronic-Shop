@@ -10,6 +10,8 @@ import Add from './components/AddToCart';
 import AddtoCartProps from './components/AddProps';
 import Product from './components/ProAdmin/PpstProduct';
 import LoginSignup from './components/Login';
+import Search from 'antd/es/input/Search';
+import SearchPro from './components/Search';
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path='/AddProps'  element={<AddtoCartProps/>}></Route>
         <Route path='/Product'  element={<Product/>}></Route>
         <Route path='/Signup' element={<LoginSignup/>}></Route>
+        <Route path='/Search' element={<SearchPro/>}></Route>
 
       </Routes>
     </Router>

@@ -39,7 +39,7 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border: 1px solid $secondry-color;
             padding: 1rem;
-            transition: .4s;
+            transition: .3s;
             @media(max-width: 522px){
                 width: 150px;
             }
@@ -103,6 +103,7 @@
             &:hover{
                 cursor: pointer;
                 border: none;
+                border: 1px solid white;
             }
         }
     }

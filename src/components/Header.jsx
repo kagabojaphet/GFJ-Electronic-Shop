@@ -1,12 +1,11 @@
 import React,{ useState } from "react";
 import logo from "../assests/logos.jpeg";
-import { AudioOutlined } from '@ant-design/icons';
 import { Input,Button} from 'antd';
 import styled from 'styled-components';
 import LoginSignup from "./Login";
 import { Modal } from 'antd';
-import axios from "axios";
-import { jwtDecode } from 'jwt-decode';
+import SearchPro from "./Search";
+
 
 
 function Header(props){
@@ -50,7 +49,10 @@ function Header(props){
   function handleOpen(){
     showModal()
   }
-
+function search(){
+  window.location.href = '/Search';
+  <SearchPro/>
+}
     return(
         <>
         <nav>
@@ -61,7 +63,7 @@ function Header(props){
                placeholder="input search text"
                enterButton="Search"
                onSearch={value => console.log(value)}
-               enterButton={<Button style={{ backgroundColor: '#494750', borderColor: '#494750', color: '#fff'}}>Search</Button>}
+               enterButton={<Button style={{ backgroundColor: '#494750', borderColor: '#494750', color: '#fff'}} onClick={search}>Search</Button>}
                style={{
                 backgroundColor: '#f0f0f0',
                 borderColor: '#d9d9d9',
