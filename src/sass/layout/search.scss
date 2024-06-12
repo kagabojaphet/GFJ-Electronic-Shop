@@ -1,5 +1,5 @@
 .search-container{
-    background: $ternary-color;
+    background: white;
     width: 100%;
     height: auto;
     padding: 4rem 5rem;
@@ -17,6 +17,8 @@
         align-items: center;
         background: white;
         border-radius: 50%;
+        border: 1px solid $secondry-color;
+        transition: .5s;
         img{
             width: 100%;
             height: 200px;
@@ -25,13 +27,12 @@
         h1{
             display: none;
         }
-        transition: .4s;
         &:hover{
             width: 200px;
             height: auto;
             border-radius: 5px;
             img{
-                width: 180px;
+                width: 100%;
                 height: 180px;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
@@ -40,6 +41,8 @@
             }
             h1{
                 display: block;
+                color: $secondry-color;
+                font-size: 1.5rem;
             }
         }
       

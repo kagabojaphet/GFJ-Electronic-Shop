@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import LoginSignup from "./Login";
 import { Modal } from 'antd';
 import SearchPro from "./Search";
+import axios from "axios";
 
 
 
@@ -49,10 +50,24 @@ function Header(props){
   function handleOpen(){
     showModal()
   }
-function search(){
-  window.location.href = '/Search';
-  <SearchPro/>
-}
+  const [results, setResults] = useState([]);
+
+ 
+  const handleSearch = async (value) => {
+      try {
+          const response = await axios.get(`http://localhost:9090/api/v1/product/search?category=${value}`);
+          setResults(response.data);
+          console.log(response.data);
+          if(response==true){
+            window.location.href = '/Search';
+          }
+  
+      } catch (error) {
+          console.error('Error fetching data:', error);
+      }
+  };
+
+
     return(
         <>
         <nav>
@@ -62,8 +77,8 @@ function search(){
             <StyledSearch
                placeholder="input search text"
                enterButton="Search"
-               onSearch={value => console.log(value)}
-               enterButton={<Button style={{ backgroundColor: '#494750', borderColor: '#494750', color: '#fff'}} onClick={search}>Search</Button>}
+               enterButton={<Button style={{ backgroundColor: '#494750', borderColor: '#494750', color: '#fff'}}>Search</Button>}
+               onSearch={handleSearch}
                style={{
                 backgroundColor: '#f0f0f0',
                 borderColor: '#d9d9d9',
