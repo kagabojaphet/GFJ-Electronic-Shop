@@ -59,10 +59,11 @@ function Header(props){
           setResults(response.data);
           console.log(response.data);
           if(!response.data){
-            console.log(response.data.message)
+           console.log(response.data.message)
           }
           else{
-            window.location.href = '/Search';
+            setResults(response.data)
+
           }
   
       } catch (error) {

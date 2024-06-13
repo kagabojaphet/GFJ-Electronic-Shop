@@ -22,47 +22,8 @@ const SearchPro=(props)=>{
         <Header/>
         <div className="search-container">
             <div className="search-pro" onClick={showModal}>
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div> <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
-            </div>
-            <div className="search-pro">
-                <img src={pro1} alt="" />
-                <h1>Laptop</h1>
+                <img src={props.image} alt="" />
+                <h1>{props.name}</h1>
             </div>
             <Modal
       open={opens}
