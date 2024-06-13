@@ -58,7 +58,10 @@ function Header(props){
           const response = await axios.get(`http://localhost:9090/api/v1/product/search?category=${value}`);
           setResults(response.data);
           console.log(response.data);
-          if(response==true){
+          if(!response.data){
+            console.log(response.data.message)
+          }
+          else{
             window.location.href = '/Search';
           }
   
