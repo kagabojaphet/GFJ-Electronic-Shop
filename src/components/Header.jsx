@@ -62,7 +62,7 @@ function Header(props){
            console.log(response.data.message)
           }
           else{
-            setResults(response.data)
+            setResults(response.data.message)
 
           }
   
